@@ -1,6 +1,5 @@
 services:
   fastapi:
-    name: torrentapi
     public: true
     build: .
     replicas: 1
