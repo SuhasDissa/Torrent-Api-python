@@ -2,6 +2,7 @@ services:
   fastapi:
     public: true
     build: .
+    image: torrent_api_py
     replicas: 1
     ports:
       - 8080
