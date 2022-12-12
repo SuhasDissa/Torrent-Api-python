@@ -131,10 +131,10 @@ class Yts:
             self.LIMIT = limit
             if page != 1:
                 url = (
-                    self.BASE_URL
-                    + "/browse-movies/{}/all/all/0/latest/0/all?page={}".format(
-                        query, page
-                    )
+                        self.BASE_URL
+                        + "/browse-movies/{}/all/all/0/latest/0/all?page={}".format(
+                    query, page
+                )
                 )
             else:
                 url = self.BASE_URL + "/browse-movies/{}/all/all/0/latest/0/all".format(

@@ -59,14 +59,14 @@ class Magnetdl:
                     )
                 )
                 total_pages = (
-                    int(
-                        (
-                            (re.search(r"Found\s\d*", total_results).group(0)).replace(
-                                "Found ", ""
+                        int(
+                            (
+                                (re.search(r"Found\s\d*", total_results).group(0)).replace(
+                                    "Found ", ""
+                                )
                             )
                         )
-                    )
-                    // 40
+                        // 40
                 )
                 my_dict["current_page"] = current_page
                 my_dict["total_pages"] = (
@@ -121,4 +121,4 @@ class Magnetdl:
                 url = self.BASE_URL + "/download/{}/{}/".format(category, page)
             return await self.parser_result(start_time, url, session)
 
-    #! maximum page in category is 30
+    # ! maximum page in category is 30

@@ -1,11 +1,9 @@
-import asyncio
 import re
 import time
 
 import aiohttp
 from bs4 import BeautifulSoup
 
-from helper.asyncioPoliciesFix import decorator_asyncio_fix
 from helper.html_scraper import Scraper
 
 
@@ -56,12 +54,12 @@ class Bitsearch:
                         break
                 try:
                     total_pages = (
-                        int(
-                            soup.select(
-                                "body > main > div.container.mt-2 > div > div:nth-child(1) > div > span > b"
-                            )[0].text
-                        )
-                        / 20
+                            int(
+                                soup.select(
+                                    "body > main > div.container.mt-2 > div > div:nth-child(1) > div > span > b"
+                                )[0].text
+                            )
+                            / 20
                     )  # !20 search result available on each page
                     total_pages = (
                         total_pages + 1

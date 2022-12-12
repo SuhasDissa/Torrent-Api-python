@@ -1,5 +1,4 @@
 import asyncio
-import re
 import time
 
 import aiohttp
@@ -104,10 +103,10 @@ class Libgen:
             start_time = time.time()
             self.LIMIT = limit
             url = (
-                self.BASE_URL
-                + "/search.php?req={}&lg_topic=libgen&open=0&view=simple&res=100&phrase=1&column=def".format(
-                    query
-                )
+                    self.BASE_URL
+                    + "/search.php?req={}&lg_topic=libgen&open=0&view=simple&res=100&phrase=1&column=def".format(
+                query
+            )
             )
             return await self.parser_result(start_time, url, session)
 

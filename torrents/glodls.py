@@ -1,11 +1,8 @@
-import asyncio
-import re
 import time
 
 import aiohttp
 from bs4 import BeautifulSoup
 
-from helper.asyncioPoliciesFix import decorator_asyncio_fix
 from helper.html_scraper import Scraper
 
 
@@ -63,10 +60,10 @@ class Glodls:
             start_time = time.time()
             self.LIMIT = limit
             url = (
-                self.BASE_URL
-                + "/search_results.php?search={}&cat=0&incldead=0&inclexternal=0&lang=0&sort=seeders&order=desc&page={}".format(
-                    query, page - 1
-                )
+                    self.BASE_URL
+                    + "/search_results.php?search={}&cat=0&incldead=0&inclexternal=0&lang=0&sort=seeders&order=desc&page={}".format(
+                query, page - 1
+            )
             )
             return await self.parser_result(start_time, url, session)
 

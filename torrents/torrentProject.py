@@ -19,10 +19,10 @@ class TorrentProject:
         async with sem:
             try:
                 async with session.get(
-                    url,
-                    headers={
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
-                    },
+                        url,
+                        headers={
+                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+                        },
                 ) as res:
                     html = await res.text(encoding="ISO-8859-1")
                     soup = BeautifulSoup(html, "lxml")

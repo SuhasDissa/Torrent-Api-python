@@ -31,7 +31,7 @@ class Torlock:
                     except:
                         pass
                     if str(magnet).startswith("magnet") and str(torrent).endswith(
-                        "torrent"
+                            "torrent"
                     ):
                         obj["torrent"] = torrent
                         obj["magnet"] = magnet
@@ -153,4 +153,4 @@ class Torlock:
                 url = self.BASE_URL + "/{}/{}/added/desc.html".format(category, page)
             return await self.parser_result(start_time, url, session)
 
-    #! Maybe impelment Search By Category in Future
+    # ! Maybe impelment Search By Category in Future

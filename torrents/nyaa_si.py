@@ -1,7 +1,9 @@
 import re
 import time
+
 import aiohttp
 from bs4 import BeautifulSoup
+
 from helper.html_scraper import Scraper
 
 

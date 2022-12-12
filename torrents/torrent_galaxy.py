@@ -1,11 +1,9 @@
-import asyncio
 import re
 import time
 
 import aiohttp
 from bs4 import BeautifulSoup
 
-from helper.asyncioPoliciesFix import decorator_asyncio_fix
 from helper.html_scraper import Scraper
 
 
@@ -104,10 +102,10 @@ class TorrentGalaxy:
             start_time = time.time()
             self.LIMIT = limit
             url = (
-                self.BASE_URL
-                + "/torrents.php?search=+{}&sort=seeders&order=desc&page={}".format(
-                    query, page - 1
-                )
+                    self.BASE_URL
+                    + "/torrents.php?search=+{}&sort=seeders&order=desc&page={}".format(
+                query, page - 1
+            )
             )
             return await self.parser_result(start_time, url, session)
 
@@ -137,11 +135,11 @@ class TorrentGalaxy:
                 if category == "documentaries":
                     category = "Docus"
                 url = (
-                    self.BASE_URL
-                    + "/torrents.php?parent_cat={}&sort=id&order=desc&page={}".format(
-                        str(category).capitalize(), page - 1
-                    )
+                        self.BASE_URL
+                        + "/torrents.php?parent_cat={}&sort=id&order=desc&page={}".format(
+                    str(category).capitalize(), page - 1
+                )
                 )
             return await self.parser_result(start_time, url, session)
 
-    #! Maybe Implemented in Future
+    # ! Maybe Implemented in Future
